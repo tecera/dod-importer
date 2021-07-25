@@ -1,0 +1,43 @@
+[MASTER]
+
+init-hook='import sys; sys.path.append(".")'
+fail-under=9.9
+jobs=0
+
+[BASIC]
+
+class-const-naming-style=any
+
+good-names=ok,dn,db,td,
+           a,b,c,d,e,f,i,j,k,m,n,w,v,ex,Run,
+           _
+
+[DESIGN]
+
+max-args=8
+max-attributes=7
+
+[FORMAT]
+
+max-line-length=120
+max-module-lines=1000
+
+[SIMILARITES]
+
+ignore-imports=yes
+
+[MESSAGES CONTROL]
+
+# Already an error when wildcard imports are used
+#   W0614 = Unused import from wildcard
+
+# Sometimes disabled depending on how bad a module is
+#   C0111 = Missing docstring
+#   W1203 = Lazy formatting %s, I'm lazy and use f-string screw it
+
+# Disable the message(s) with the given id(s).
+disable=W1203,
+        R0903,
+        C0111,
+        W0613,
+        R0801 # Duplicated Code

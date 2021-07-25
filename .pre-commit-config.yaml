@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-docstring-first
+    - id: check-json
+    - id: check-yaml
+    - id: debug-statements
+    - id: requirements-txt-fixer
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black
+        files: ^.*.py$
+        language: system
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        files: ^.*.py$
+        language: system
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        files: ^.*.py$
+        language: system
+  - repo: local
+    hooks:
+      - id: pytest-check
+        name: pytest-check
+        entry: pytest
+        language: system
+        pass_filenames: false
+        always_run: true
