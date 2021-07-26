@@ -4,7 +4,7 @@ pipeline: format linting unittest
 
 venv: venv/touchfile
 
-venv/touchfile: requirements.txt
+venv/touchfile: dev_requirements.txt
 	@test -d .venv || virtualenv .venv
 	@. .venv/bin/activate; pip install -Ur dev_requirements.txt
 	@touch .venv/touchfile

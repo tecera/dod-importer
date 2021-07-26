@@ -25,9 +25,9 @@ repos:
         language: system
   - repo: local
     hooks:
-      - id: pylint
-        name: pylint
-        entry: pylint
+      - id: linting
+        name: linting
+        entry: make linting
         files: ^.*.py$
         language: system
   - repo: local
