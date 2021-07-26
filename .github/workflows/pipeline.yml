@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install
+      run: pip install -r dev_requirements.txt
+    - name: format
+      run: make format
+    - name: linting
+      run: make linting
+    - name: unittest
+      run: make unittest
